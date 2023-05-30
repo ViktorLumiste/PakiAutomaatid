@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
+import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [pakiautomaadid, setPakiautomaadid] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/parcel-machines")
-        .then(res => res.json())
-        .then(json => setPakiautomaadid(json));
-  }, []);
-
   return (
-      <div className="App">
-        <select>
-          {pakiautomaadid.map(automaat =>
-              <option>
-                {automaat.NAME}
-              </option>)}
-        </select>
-      </div>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
